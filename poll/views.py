@@ -29,6 +29,10 @@ def results(request, poll_id):
 
 def vote(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
+    
+    if request.method == 'POST':
+        print(request.POST['poll'])
+          
     context ={
         'poll': poll
     }
