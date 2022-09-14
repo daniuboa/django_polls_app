@@ -2,12 +2,14 @@ from multiprocessing import context
 from django.shortcuts import render, redirect
 from .forms import CreatePollForm
 
+from .models import Poll
+
 # Create your views here.
 def home(request):
-    polls = poll.objects.all()
+    polls = Poll.objects.all()
     
     context = {'polls': polls}
-    return render(request, 'poll/home.html', context={})
+    return render(request, 'poll/home.html', context)
 
 def create(request):
     if request.method == 'POST':
@@ -22,7 +24,7 @@ def create(request):
     return redirect('home')
 
 def results(request):
-    return render(request, 'poll/results.html', context={})
+    return render(request, 'poll/results.html', context)
 
 def vote(request):
     return render(request, 'poll/vote.html', context={})
