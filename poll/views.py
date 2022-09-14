@@ -4,6 +4,9 @@ from .forms import CreatePollForm
 
 # Create your views here.
 def home(request):
+    polls = poll.objects.all()
+    
+    context = {'polls': polls}
     return render(request, 'poll/home.html', context={})
 
 def create(request):
