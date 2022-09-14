@@ -23,8 +23,10 @@ def create(request):
     
     return redirect('home')
 
-def results(request):
+def results(request, poll_id):
+    context ={}
     return render(request, 'poll/results.html', context)
 
-def vote(request):
-    return render(request, 'poll/vote.html', context={})
+def vote(request, poll_id):
+    context ={}
+    return render(request, 'poll/vote.html', context)
