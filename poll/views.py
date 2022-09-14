@@ -1,5 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import CreatePollForm
 
 # Create your views here.
@@ -16,7 +16,7 @@ def create(request):
         
     context = {'form': form}
     
-    return render(request, 'poll/create.html', context)
+    return redirect('home')
 
 def results(request):
     return render(request, 'poll/results.html', context)
