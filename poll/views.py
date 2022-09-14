@@ -4,7 +4,7 @@ from .forms import CreatePollForm
 
 # Create your views here.
 def home(request):
-    return render(request, 'poll/home.html', context={})
+    return render(request, 'poll/home.html', context)
 
 def create(request):
     if request.method == 'POST':
@@ -14,10 +14,10 @@ def create(request):
         
     context = {'form': form}
     
-    return render(request, 'poll/create.html', context={})
+    return render(request, 'poll/create.html', context)
 
 def results(request):
-    return render(request, 'poll/results.html', context={})
+    return render(request, 'poll/results.html', context)
 
 def vote(request):
-    return render(request, 'poll/vote.html', context={})
+    return render(request, 'poll/vote.html', context)
